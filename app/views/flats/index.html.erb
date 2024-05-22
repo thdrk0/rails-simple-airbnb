@@ -1,0 +1,27 @@
+<div class="d-flex align-items-center justify-content-between p-3">
+  <h3>Simple Airbnb</h3>
+<button type="button" class="btn bg-white text-primary border border-primary rounded">Add flat</button>
+</div>
+
+<ul>
+  <div class="container p-3 mb-2 bg-white">
+    <h1>All our flats <%= @flats.count %></h1>
+    <div class="row">
+      <% @flats.each do |flat| %>
+        <div class="col-4 flat bg-light rounded border mb-3 pt-3 small shadow">
+          <div class="details p-3">
+            <div class="name fw-bold fs-4"> <%= flat.name %> </div>
+            <div class="address"> <%= flat.address %> </div>
+            <div class="d-flex align-items-center justify-content-between">
+              <i class="fa-solid fa-users"> <%= flat.number_of_guests %></i>
+              <i class="fa-solid fa-euro-sign p-3"><%= flat.price_per_night %></i>
+            </div>
+          </div>
+          <div class="more-info bg-white border-top p-3">
+            <div class="text-primary">More info</div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</ul>
